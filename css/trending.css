@@ -1,0 +1,35 @@
+.pupularBtn {
+  color: #f3eeee;
+  padding: 0 0 20px 50px;
+  display: flex;
+  gap: 10px;
+  width: 90%;
+}
+
+.pupularBtn p {
+  background-image: linear-gradient(
+    to right,
+    rgb(17, 100, 234),
+    rgb(75, 115, 147)
+  );
+  min-width: 80px;
+  border-radius: 20px;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.pupularBtn .leastTrending {
+  background-image: linear-gradient(
+    to right,
+    rgb(86, 20, 122),
+    rgb(167, 41, 123)
+  );
+}
+
+.mostPopular {
+  color: var(--secondary-color-hover);
+  margin: 10px 0 5px 0;
+}

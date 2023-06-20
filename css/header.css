@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&family=Exo+2:ital,wght@1,300&family=PT+Serif&family=Ubuntu&display=swap");
+
+header {
+  background-color: var(--dark);
+  color: #eee;
+  width: 99%;
+  padding: 15px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+#myHeader {
+  display: flex;
+  width: 85%;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  outline: none;
+  /* border: 1px solid red; */
+}
+
+#myHeader h3 {
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-family: "Exo 2", sans-serif;
+  font-family: "PT Serif", serif;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.title {
+  display: flex;
+}
+
+#myHeader span {
+  font-size: 2rem;
+  color: var(--primary-color);
+  padding: 0 5px 0 0;
+}
+
+form {
+  display: flex;
+}
+
+header input {
+  width: 220px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  font-size: 1rem;
+  font-family: "Edu NSW ACT Foundation", cursive;
+  font-family: "Exo 2", sans-serif;
+  font-family: "PT Serif", serif;
+  font-family: "Sarabun", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+}
+
+header button {
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  margin-top: 1px;
+  color: var(--light);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin: 0 0 0 10px;
+}
+
+header button:hover {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+header input:focus {
+  border: 2px solid var(--secondary-color);
+  color: #222;
+}
