@@ -16,10 +16,12 @@
 .movie img {
   width: 100%;
   height: 300px;
+  cursor: pointer;
 }
 
 .movie {
-  width: 30%;
+  width: min-content;
+  min-width: 30%;
   border: none;
   border-radius: 5px;
   margin: 16px;
@@ -41,4 +43,16 @@
 
 .movie span {
   font-family: serif;
+}
+
+@media (min-width: 280px) and (max-width: 767px) {
+  #movies {
+    flex-wrap: wrap;
+  }
+
+  .movie {
+    padding: 0;
+    width: 0;
+    flex: 2 2 auto;
+  }
 }

@@ -31,5 +31,16 @@
 
 .mostPopular {
   color: var(--secondary-color-hover);
-  margin: 10px 0 5px 0;
+  margin: 25px 0 5px 0;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .pupularBtn p {
+    min-width: 60px;
+    font-size: 0.9em;
+  }
+
+  .mostPopular {
+    margin: 10px 0 10px 0;
+  }
 }
