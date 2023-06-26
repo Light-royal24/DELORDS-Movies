@@ -21,7 +21,7 @@
 
 .movie {
   width: min-content;
-  min-width: 30%;
+  min-width: 29%;
   border: none;
   border-radius: 5px;
   margin: 16px;
@@ -45,14 +45,16 @@
   font-family: serif;
 }
 
-@media (min-width: 280px) and (max-width: 767px) {
-  #movies {
-    flex-wrap: wrap;
-  }
-
+/* For mobile phones: */
+@media only screen and (max-width: 480px) {
   .movie {
-    padding: 0;
-    width: 0;
-    flex: 2 2 auto;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* For desktop: */
+  .movie {
+    width: 42%;
   }
 }

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   // 2. Fetch upcoming movies and series
   // const upcomingMovies = await fetchMoviesAPI(movieUrl);
-  const upcomingMovies = await fetchMoviesLocal(movieUrl);
+  const upcomingMovies = await fetchMoviesAPI(movieUrl);
   // 3. Save the results of the fetch request in movies variable
   const movies = upcomingMovies.results;
 
@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     if (e.target.value.trim() === "") {
       // 2. Fetch upcoming movies and series
       // const upcomingMovies = await fetchMoviesAPI(movieUrl);
-      const upcomingMovies = await fetchMoviesLocal(movieUrl);
+      const upcomingMovies = await fetchMoviesAPI(movieUrl);
       // 3. Save the results of the fetch request in movies variable
       const movies = upcomingMovies.results;
 
@@ -89,23 +89,23 @@ async function fetchMoviesAPI(movieUrl) {
   });
 }
 
-async function fetchMoviesLocal() {
-  return new Promise((resolve, reject) => {
-    const requestOptions = {
-      method: "GET",
-      redirect: "follow",
-    };
+// async function fetchMoviesLocal() {
+//   return new Promise((resolve, reject) => {
+//     const requestOptions = {
+//       method: "GET",
+//       redirect: "follow",
+//     };
 
-    fetch("./response.json", requestOptions)
-      .then((response) => response.json())
-      .then((result) => {
-        resolve(result);
-      })
-      .catch((error) => {
-        reject(error);
-      });
-  });
-}
+//     fetch("./response.json", requestOptions)
+//       .then((response) => response.json())
+//       .then((result) => {
+//         resolve(result);
+//       })
+//       .catch((error) => {
+//         reject(error);
+//       });
+//   });
+// }
 
 const getMovieDetails = (movie) => {
   const { originalTitleText, primaryImage, releaseYear, titleType } = movie;
@@ -209,3 +209,11 @@ function toggleLoading(loading) {
     loading ? 0 : 1500
   );
 }
+
+const bar = document.querySelector(".bar");
+
+bar.addEventListener("click", () => {
+  const header = document.querySelector("header");
+
+  header.classList.toggle("active");
+});

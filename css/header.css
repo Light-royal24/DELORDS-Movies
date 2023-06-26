@@ -12,6 +12,7 @@ header {
   align-items: center;
   justify-content: center;
   border-bottom: 2px solid var(--secondary-color);
+  transition: all 0.5s ease;
 }
 
 #myHeader {
@@ -92,23 +93,65 @@ header input:focus {
     font-size: 1.6rem;
     padding: 0 2px 0 0;
   }
+}
 
+.bar {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none;
+  visibility: hidden;
+  position: relative;
+}
+
+@media only screen and (max-width: 480px) {
+  .bar {
+    display: block;
+    visibility: visible;
+  }
   header input {
-    width: 140px;
-    padding: 5px 10px;
-    font-size: 0.8rem;
+    position: absolute;
+    top: 64px;
+    right: -1000px;
+    width: 50%;
+  }
+  header button {
+    position: absolute;
+    top: 64px;
+    right: -1000px;
   }
 
+  header.active input {
+    right: 75px;
+  }
+
+  header.active button {
+    right: 40px;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* For desktop: */
+  .bar {
+    display: block;
+    visibility: visible;
+    top: -5px;
+  }
+  header input {
+    position: absolute;
+    top: 64px;
+    right: -1000px;
+  }
   header button {
-    width: 25px;
-    height: 25px;
-    margin-top: 10px;
-    color: var(--light);
-    background-color: transparent;
-    border: none;
-    outline: none;
-    font-size: 0.9rem;
-    cursor: pointer;
-    margin: 0 0 0 5px;
+    position: absolute;
+    top: 64px;
+    right: -1000px;
+  }
+
+  header.active input {
+    right: 75px;
+  }
+
+  header.active button {
+    right: 40px;
   }
 }
