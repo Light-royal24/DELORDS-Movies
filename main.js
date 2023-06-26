@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   // 4. Display the movies in our HTML
   displayMovies(movies);
 
+  const mainGenres = await fetchGenres();
+
+  const genries = mainGenres.results;
+
+  displayGenres(genries);
   // Saving our next button in variable
   const nextPage = document.querySelector("#next");
 
@@ -216,4 +221,53 @@ bar.addEventListener("click", () => {
   const header = document.querySelector("header");
 
   header.classList.toggle("active");
+});
+
+async function fetchGenres() {
+  return new Promise((resolve, reject) => {
+    var myHeaders = new Headers();
+    myHeaders.append("X-RapidAPI-Key", apiKey);
+
+    var requestOptions = {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    };
+
+    fetch(
+      "https://moviesdatabase.p.rapidapi.com/titles/utils/genres",
+      requestOptions
+    )
+      .then((response) => response.json())
+      .then((result) => {
+        resolve(result);
+      })
+      .catch((error) => {
+        console.log(error);
+        reject(error);
+      });
+  });
+}
+
+function displayGenres(genries) {
+  const genriesHtml = genries
+    .filter((genries) => genries)
+    .map((genre) => {
+      return `
+    <button>${genre}</button>
+    `;
+    })
+    .join("");
+
+  const popularBtn = document.querySelector(".pupularBtn");
+
+  popularBtn.innerHTML = genriesHtml;
+}
+
+const genresBtn = document.querySelector(".genres");
+
+genresBtn.addEventListener("click", () => {
+  const container = document.querySelector(".container");
+
+  container.classList.toggle("active");
 });

@@ -28,7 +28,6 @@
 }
 
 body {
-  min-height: 100vh;
   background-color: var(--dark);
   overflow-x: hidden;
 }

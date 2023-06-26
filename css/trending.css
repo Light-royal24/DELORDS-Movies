@@ -1,12 +1,15 @@
 .pupularBtn {
   color: #f3eeee;
-  padding: 0 0 20px 50px;
-  display: flex;
+  padding: 10px 0 10px 10px;
   gap: 10px;
-  width: 90%;
+  width: 85%;
+  flex-wrap: wrap;
+  border: 1px solid var(--secondary-color-hover);
+  border-radius: 10px;
+  display: none;
 }
 
-.pupularBtn p {
+.pupularBtn button {
   background-image: linear-gradient(
     to right,
     rgb(17, 100, 234),
@@ -18,10 +21,12 @@
   display: flex;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 1em;
+  border: none;
+  outline: none;
 }
 
-.pupularBtn .leastTrending {
+.pupularBtn button:nth-child(2n) {
   background-image: linear-gradient(
     to right,
     rgb(86, 20, 122),
@@ -35,8 +40,30 @@
   margin: 25px 0 5px 0;
 }
 
+.genries {
+  color: var(--light);
+  width: 80%;
+  font-size: 1.6rem;
+  margin: 0 0 10px 0;
+}
+
+.genres {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border: 1px solid var(--secondary-color);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.genres i {
+  font-size: 1.5rem;
+  padding: 5px 0 0 0;
+}
+
 @media (min-width: 481px) and (max-width: 767px) {
-  .pupularBtn p {
+  .pupularBtn button {
     min-width: 60px;
     font-size: 0.9em;
   }
@@ -47,7 +74,7 @@
 }
 
 @media only screen and (max-width: 480px) {
-  .pupularBtn p {
+  .pupularBtn button {
     min-width: 16%;
     font-size: 70%;
   }
@@ -59,4 +86,8 @@
     width: 80%;
     padding: 0 0 20px 0;
   }
+}
+
+.container.active .pupularBtn {
+  display: flex;
 }
